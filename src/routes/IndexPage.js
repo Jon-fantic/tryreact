@@ -3,9 +3,12 @@ import { connect } from 'dva';
 import styles from './IndexPage.css';
 
 function IndexPage({dispatch,user}) {
+
   let handleClick =()=>{
-    dispatch({type:"fetch"})
+    console.log(dispatch);
+    dispatch({type:"user/fetch"})
   }
+  console.log(user)
   return (
     <div className={styles.normal}>
       <h1 className={styles.title}>Yay! Welcome to dva!</h1>
@@ -23,4 +26,4 @@ IndexPage.propTypes = {
   
 };
 
-export default connect(({user})=> user)(IndexPage);
+export default connect(({user})=> {return {user}})(IndexPage);

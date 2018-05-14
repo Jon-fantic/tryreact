@@ -14,16 +14,17 @@ export default {
 
   effects: {
     *fetch(action, { call, put }) {  // eslint-disable-line
-      alert(1)
       let isexit = yield call(query,action.data)
       console.log(isexit)
-      yield put({ type: 'save',data:isexit });
+      yield put({ type: 'save',payload:{ isexit: true } });
     },
   },
 
   reducers: {
     save(state, action) {
-      return { ...state, isexit: action.data };
+      console.log(state);
+      console.log(action);
+      return { ...state, ...action.payload };
     },
   },
 
