@@ -1,6 +1,6 @@
 import dva from 'dva';
 import './index.css';
-
+import 'antd-mobile/dist/antd-mobile.less';
 // 1. Initialize
 const app = dva();
 

@@ -1,5 +1,8 @@
 import { Component } from 'react';
 import {connect} from 'dva';
+import { Button } from 'antd-mobile';
+import Footer from "../components/footer"
+import './saaa.css';
 @connect(({user}) => {
   return {data: user}
 })
@@ -27,8 +30,10 @@ export default class Test extends Component {
     // console.log(data);
     return (
       <div>
-      <div>11111111</div>
+      <div className="aaa">11111111</div>
+      <Button type="primary">primary</Button>
       <button onClick={() => this.handleClick()} />
+      <Footer/>
       </div>
     )
   }
