@@ -1,14 +1,16 @@
-import {query} from "../services/example"
 export default {
 
-  namespace: 'user',
+  namespace: 'homepage',
 
   state: {
-    isexit:false
+    isexitdeds:false
   },
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
+      history.listen(loc=>{
+        console.log(loc,2323)
+      })
     },
   },
 

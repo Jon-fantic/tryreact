@@ -1,10 +1,9 @@
 import { Component } from 'react';
-import { connect } from 'dva';
 // import { Button } from 'antd-mobile';
-import Footer from "../../components/footer"
 import './home.css';
-@connect(({ user }) => {
-  return { data: user }
+import { connect } from 'dva';
+@connect(({ homepage,user }) => {
+  return { data:{...homepage,...user} }
 })
 export default class Home extends Component {
   // state ={
@@ -25,8 +24,9 @@ export default class Home extends Component {
     // const change = () => {
 
     // }
-    // const {data} =this.props;
-    console.log(this.props);
+    const {data} =this.props;
+    console.log(this.props,123);
+    console.log(data,123);
     // console.log(data);
     return (
       <div id="home">
